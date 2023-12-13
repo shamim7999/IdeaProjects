@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="com.dao.Database" name="database">
+        <property name="driver" value="com.mysql.cj.jdbc.Driver" />
+
+        <property name="url" value="jdbc:mysql://localhost:3306/shamim"/>
+
+        <property name="userName" value="root"/>
+
+        <property name="password" value=""/>
+
+
+
+        <property name="name" value="Ali"/>
+
+        <property name="email" value="Ali@gmail.com"/>
+
+        <property name="age" value="67"/>
+
+        <property name="course" value="Prolog"/>
+
+        <property name="myQuery" value="INSERT INTO person (name, course, age, email) VALUES (?, ?, ?, ?)"/>
+<!--        <property name="studentAddress" value="Shonir Akhra"/>-->
+
+
+    </bean>
+
+    <bean class="com.dao.DataSender" name="datasender">
+        <property name="myQuery" value="INSERT INTO person (name, course, age, email) VALUES (?, ?, ?, ?)"/>
+    </bean>
+</beans>
