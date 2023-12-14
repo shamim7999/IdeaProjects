@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       xmlns:c="http://www.springframework.org/schema/c" >
+    <bean class="com.springcore.Certi" name="certi">
+        <constructor-arg value="Java, CPP, C, Python" />
+    </bean>
+
+    <bean class="com.springcore.Person" name="person" c:name="Shamim" c:personId="700">
+<!--        <constructor-arg value="Shamim"/>-->
+<!--        <constructor-arg value="700" type="int"/>-->
+        <constructor-arg ref="certi" />
+        <constructor-arg>
+            <list>
+                <value>Java</value>
+                <value>Computer Architecture</value>
+                <value>Operating System</value>
+                <value>Database</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean class="com.calc.Addition" name="addition" init-method="init" destroy-method="destroy">
+        <constructor-arg value="12" type="int" index="0"/>
+        <constructor-arg value="100" type="int" index="1"/>
+    </bean>
 
 </beans>
