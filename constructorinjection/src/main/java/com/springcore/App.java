@@ -14,7 +14,7 @@ public class App
     public static void main( String[] args )
     {
         System.out.println( "Hello Constructor Injection!" );
-        AbstractApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"config.xml", "AdditionConfig.xml"});
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"config.xml"});
 
         Person person = (Person) context.getBean("person");
         System.out.println(person+"\n");

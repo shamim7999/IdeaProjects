@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+">
+    <context:annotation-config />
+    <util:list list-class="java.util.ArrayList" id="cities1">
+        <value>Dhaka</value>
+        <value>Sylhet</value>
+        <value>Rajshahi</value>
+    </util:list>
+
+    <util:list list-class="java.util.ArrayList" id="cities2">
+        <value>California</value>
+        <value>New York</value>
+        <value>Texas</value>
+    </util:list>
+
+
+
+    <bean class="com.spring.autowire.Address" name="address1">
+        <property name="city" ref="cities1"/>
+    </bean>
+
+    <bean class="com.spring.autowire.Address" name="address2">
+        <property name="city" ref="cities2"/>
+    </bean>
+
+    <bean class="com.spring.autowire.Student" name="student">
+        <property name="name" value="Shamim Sarker"/>
+<!--        <property name="address" ref="address"/>-->
+    </bean>
+
+</beans>
