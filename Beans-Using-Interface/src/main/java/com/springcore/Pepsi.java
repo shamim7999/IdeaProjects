@@ -21,7 +21,7 @@ public class Pepsi implements InitializingBean, DisposableBean {
                 "price=" + price +
                 '}';
     }
-
+    @Override
     public void afterPropertiesSet() throws Exception {
         /// eta init() er kaj kore.. init() er logic ekhaneo boshate pari
         System.out.println("Taking Pepsi: init");

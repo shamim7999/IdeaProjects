@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"
+        >
+<!--        Standalone List and Map-->
+    <util:list list-class="java.util.ArrayList" id="friends">
+        <value>Shamim</value>
+        <value>Sarker</value>
+        <value>Imon</value>
+        <value>Mohammed</value>
+    </util:list>
+
+    <util:map map-class="java.util.HashMap" id="fees">
+        <entry key="Java" value="200"/>
+        <entry key="Python" value="300"/>
+        <entry key="Cobol" value="400"/>
+    </util:map>
+
+<!--    Beans Declaration-->
+    <bean class="com.standalone.collection.Person" name="person" >
+        <property name="feestructure" ref="fees"/>
+        <property name="friends" ref="friends"/>
+    </bean>
+</beans>

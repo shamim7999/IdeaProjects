@@ -3,27 +3,21 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        xmlns:c="http://www.springframework.org/schema/c" >
-    <bean class="com.springcore.Certi" name="certi">
-        <constructor-arg value="Java, CPP, C, Python" />
-    </bean>
+    <bean class="com.springcore.Certi" name="certi" c:name="Java, C/C++" />
 
-    <bean class="com.springcore.Person" name="person" c:name="Shamim" c:personId="700">
-<!--        <constructor-arg value="Shamim"/>-->
-<!--        <constructor-arg value="700" type="int"/>-->
-        <constructor-arg ref="certi" />
+    <bean class="com.springcore.Person" name="person" autowire="constructor">
+        <constructor-arg value="Shamim Sarker Constructor" index="0"/>
+        <constructor-arg value="2999" type="int" index="1"/>
+<!--        <constructor-arg ref="certi" index="2"/>-->
         <constructor-arg>
             <list>
                 <value>Java</value>
-                <value>Computer Architecture</value>
-                <value>Operating System</value>
-                <value>Database</value>
+                <value>C#</value>
+                <value>C++</value>
+                <value>Python</value>
+
             </list>
         </constructor-arg>
-    </bean>
-
-    <bean class="com.calc.Addition" name="addition" init-method="init" destroy-method="destroy">
-        <constructor-arg value="12" type="int" index="0"/>
-        <constructor-arg value="100" type="int" index="1"/>
     </bean>
 
 </beans>
