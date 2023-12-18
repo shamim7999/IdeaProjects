@@ -15,29 +15,19 @@
 <body>
 <div class="container">
     <h1>My Form</h1>
-    <form action="registerservlet" method="post"> <!-- action is gonna used url-pattern -->
+    <form action="registerpersonservlet" method="post"> <!-- action is gonna used url-pattern -->
         <table>
-            <tr>
-                <td>Enter Name: </td>
-                <td><input type="text" name="user_name" placeholder="Enter Here.."></td>
-            </tr>
             <tr>
                 <td>Enter Email: </td>
                 <td><input type="email" name="user_email" placeholder="Enter here.."></td>
             </tr>
             <tr>
-                <td>Enter Age: </td>
-                <td><input type="number" name="user_age" placeholder="Enter Here.."></td>
+                <td>Enter Password: </td>
+                <td><input type="password" name="user_password" placeholder="Enter here.."></td>
             </tr>
             <tr>
-                <td>Select Course</td>
-                <td>
-                    <select name="user_course">
-                        <option value="Java">Java</option>
-                        <option value="CPP">CPP</option>
-                        <option value="Python">Python</option>
-                    </select>
-                </td>
+                <td>Confirm Password: </td>
+                <td><input type="password" name="user_confirm_password" placeholder="Enter here.."></td>
             </tr>
             <tr>
                 <td>

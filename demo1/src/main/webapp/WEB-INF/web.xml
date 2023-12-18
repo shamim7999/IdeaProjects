@@ -20,6 +20,21 @@
         <servlet-class>com.controller.DispatchedServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>registerpersonservlet</servlet-name>
+        <servlet-class>com.controller2.RegisterPersonServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>dispatchedpersonservlet</servlet-name>
+        <servlet-class>com.controller2.DispatchedPersonServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>loginpersonservlet</servlet-name>
+        <servlet-class>com.controller2.LoginPersonServlet</servlet-class>
+    </servlet>
+
     <!-- Servlet Mapping -->
 
     <servlet-mapping>
@@ -29,11 +44,27 @@
 
     <servlet-mapping>
         <servlet-name>registerservlet</servlet-name>
-        <url-pattern>/RegisterServlet</url-pattern>
+        <url-pattern>/registerservlet</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>dispatchedservlet</servlet-name>
         <url-pattern>/dispatchedservlet</url-pattern>
     </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>registerpersonservlet</servlet-name>
+        <url-pattern>/registerpersonservlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>dispatchedpersonservlet</servlet-name>
+        <url-pattern>/dispatchedpersonservlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>loginpersonservlet</servlet-name>
+        <url-pattern>/loginpersonservlet</url-pattern>
+    </servlet-mapping>
+
 </web-app>
