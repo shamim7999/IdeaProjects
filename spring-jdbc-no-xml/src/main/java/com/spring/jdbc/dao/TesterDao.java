@@ -10,7 +10,7 @@ public interface TesterDao {
 
     public int delete(Tester tester);
 
-    public Tester showAllRecords(int testerId);
+    public Tester showAllRecordsById(int testerId);
 
     public List<Tester> showAllRecords();
 

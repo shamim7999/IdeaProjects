@@ -1,17 +1,17 @@
 package com.spring.jdbc.dao;
 
 import com.spring.jdbc.entity.Tester;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.List;
 
+@Component("testerDaoImpl") // ---> If you don't use @Component, then See JdbcConfig Class, how to do it manually..!
 public class TesterDaoImpl implements TesterDao{
+
+    @Autowired
     private JdbcTemplate jdbcTemplate;
 
     public JdbcTemplate getJdbcTemplate() {
@@ -45,7 +45,7 @@ public class TesterDaoImpl implements TesterDao{
         return 0;
     }
 
-    public Tester showAllRecords(int testerId) {
+    public Tester showAllRecordsById(int testerId) {
         String query = "select * from tester where id=?";
         RowMapper<Tester> rowMapper = new RowMapperImpl();
         Tester tester1 = this.jdbcTemplate.queryForObject(query, rowMapper, testerId);

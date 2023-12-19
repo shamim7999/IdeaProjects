@@ -1,25 +1,19 @@
 package com.spring.jdbc.entity;
 
 import com.spring.jdbc.dao.TesterDao;
-import com.spring.jdbc.dao.TesterDaoImpl;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
-/**
- * Hello world!
- *
- */
-public class App 
+public class App
 {
 
     public static void main( String[] args )
     {
-        ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"config.xml"});
+        ApplicationContext context = new AnnotationConfigApplicationContext(JdbcConfig.class);
         //JdbcTemplate jdbcTemplate = (JdbcTemplate) context.getBean("jdbcTemplate");
         TesterDao testerDao = (TesterDao) context.getBean("testerDaoImpl"); // TesterDao is Interface
         // TesterDao testerDao = (TesterDaoImpl) context.getBean("testerDaoImpl"); ---> This also works --> TesterDaoImpl is Class
@@ -73,7 +67,7 @@ public class App
             } else if(cc == 4) {
                 System.out.print("Enter ID: ");
                 int id = in.nextInt();
-                tester = testerDao.showAllRecords(id);
+                tester = testerDao.showAllRecordsById(id);
                 System.out.println(tester);
             } else if(cc == 5){
                 List<Tester> testers = testerDao.showAllRecords();
