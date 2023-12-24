@@ -1,10 +1,12 @@
 package com.functional.test;
 
 import java.util.ArrayList;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 
 public class Main {
@@ -51,5 +53,23 @@ public class Main {
                 .filter(personDTO -> Integer.parseInt(personDTO.getAge()) > 17)
                 .collect(Collectors.toList());
         personDTOS.forEach(System.out::println);
+
+        IntStream s = IntStream.of(1, 2, 3, 4);
+        long count = s.peek(System.out::println).count();
+
+        System.out.println(count);
+
+        List<String> strings = List.of("one", "two", "three", "four");
+
+        List<Integer> lens = strings.stream()
+                        .map(str -> str.length())
+                                .collect(Collectors.toList());
+
+        System.out.println(lens);
+
+        IntSummaryStatistics stats = strings.stream()
+                .mapToInt(str -> str.length())
+                .summaryStatistics();
+        System.out.println("Stats: "+stats);
     }
 }
