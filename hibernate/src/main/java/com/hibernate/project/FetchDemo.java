@@ -16,13 +16,10 @@ public class FetchDemo {
         Transaction transaction = session.beginTransaction();
         /////////////////////////////////////////////
 
-//        Student student = session.load(Student.class, 1);
-//        System.out.println(student.getName());
-//        student = session.get(Student.class, 2);
-//        System.out.println(student.getName());
-
-        Employee employee = session.load(Employee.class, 1);
-        System.out.println(employee.getName());
+        Student student = session.load(Student.class, 1);
+        System.out.println(student.getName());
+        student = session.get(Student.class, 2);
+        System.out.println(student.getName());
 
         /////////////////////////////////////////////
         transaction.commit();
