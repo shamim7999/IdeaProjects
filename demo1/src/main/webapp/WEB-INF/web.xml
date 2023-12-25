@@ -35,7 +35,25 @@
         <servlet-class>com.controller2.LoginPersonServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>c3s1</servlet-name>
+        <servlet-class>com.controller3.S1</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>c3s2</servlet-name>
+        <servlet-class>com.controller3.S2</servlet-class>
+    </servlet>
     <!-- Servlet Mapping -->
+    <servlet-mapping>
+        <servlet-name>c3s1</servlet-name>
+        <url-pattern>/c3s1</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>c3s2</servlet-name>
+        <url-pattern>/c3s2</url-pattern>
+    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>helloservlet</servlet-name>
