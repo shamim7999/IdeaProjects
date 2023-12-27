@@ -44,6 +44,13 @@
         <servlet-name>c3s2</servlet-name>
         <servlet-class>com.controller3.S2</servlet-class>
     </servlet>
+
+
+    <servlet>
+        <servlet-name>demoservlet</servlet-name>
+        <servlet-class>com.controller5.DemoServlet</servlet-class>
+    </servlet>
+
     <!-- Servlet Mapping -->
     <servlet-mapping>
         <servlet-name>c3s1</servlet-name>
@@ -58,6 +65,11 @@
     <servlet-mapping>
         <servlet-name>helloservlet</servlet-name>
         <url-pattern>/helloservlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>demoservlet</servlet-name>
+        <url-pattern>/demoservlet</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>

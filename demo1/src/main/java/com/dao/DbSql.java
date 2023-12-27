@@ -1,6 +1,8 @@
 package com.dao;
 
+import com.entity.Tester;
 import com.mysql.cj.protocol.Resultset;
+import com.queries.QueryImpl;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -62,15 +64,28 @@ public class DbSql {
         this.password = password;
     }
 
+    public Connection testConnection() {
+        try {
+            Class.forName(driver);
+            Connection conn = DriverManager.getConnection(url, userName, password);
+            System.out.println("Connected Succesfully");
+            return conn;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     public void sendData() {
 
 
         try {
-            Class.forName(driver);
+//            Class.forName(driver);
+//
+//            Connection conn = DriverManager.getConnection(url, userName, password);
+//            System.out.println("Connected Succesfully");
 
-            Connection conn = DriverManager.getConnection(url, userName, password);
-            System.out.println("Connected Succesfully");
+            Connection conn = testConnection();
 
             String myQuery = "INSERT INTO person (id, name, course, age, email) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement ps = conn.prepareStatement(myQuery);
@@ -83,7 +98,7 @@ public class DbSql {
 
             ps.executeUpdate();
 
-        } catch(ClassNotFoundException | SQLException e) {
+        } catch(Exception e) {
             e.printStackTrace();
             System.err.println(e.getMessage());
         }
@@ -91,10 +106,11 @@ public class DbSql {
 
     public void sendRegData() {
         try {
-            Class.forName(driver);
-
-            Connection conn = DriverManager.getConnection(url, userName, password);
-            System.out.println("Connected Succesfully");
+//            Class.forName(driver);
+//
+//            Connection conn = DriverManager.getConnection(url, userName, password);
+//            System.out.println("Connected Succesfully");
+            Connection conn = testConnection();
 
             String myQuery = "INSERT INTO reg (email, password) VALUES (?, ?)";
             PreparedStatement ps = conn.prepareStatement(myQuery);
@@ -104,7 +120,7 @@ public class DbSql {
 
             ps.executeUpdate();
 
-        } catch(ClassNotFoundException | SQLException e) {
+        } catch(Exception e) {
             e.printStackTrace();
             System.err.println(e.getMessage());
         }
@@ -112,10 +128,11 @@ public class DbSql {
 
     public String checkEmail(String record) {
         try {
-            Class.forName(driver);
-
-            Connection conn = DriverManager.getConnection(url, userName, password);
-            System.out.println("Connected Succesfully");
+//            Class.forName(driver);
+//
+//            Connection conn = DriverManager.getConnection(url, userName, password);
+//            System.out.println("Connected Succesfully");
+            Connection conn = testConnection();
 
             String myQuery = "SELECT * FROM reg WHERE email = ?";
             PreparedStatement ps = conn.prepareStatement(myQuery);
@@ -132,10 +149,16 @@ public class DbSql {
             }
             return null;
 
-        } catch(ClassNotFoundException | SQLException e) {
+        } catch(Exception e) {
             e.printStackTrace();
             System.err.println(e.getMessage());
             return null;
         }
     }
+
+//    public List<Tester> showAll(String query) {
+//        QueryImpl qi = new QueryImpl();
+//        return qi.showAll(query);
+//    }
+
 }
