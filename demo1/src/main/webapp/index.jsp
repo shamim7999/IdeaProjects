@@ -28,6 +28,6 @@
         <a href="login.jsp">Login</a> <br> <br>
         <a href="formC3.jsp">Form for C3</a> <br> <br>
         <a href="formC4.jsp">Form for C4</a> <br> <br>
-        <a href="jspJDBC1.jsp"> JSP JDBC </a>
+        <a href="jspJDBC1.jsp"> JSP JDBC </a> <br> <br>
     </body>
 </html>

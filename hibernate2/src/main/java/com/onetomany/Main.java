@@ -19,8 +19,8 @@ public class Main {
         Transaction transaction = session.beginTransaction();
         /////////////////////////////////////////////
 
-        Address a1 = new Address(101, "Perm Address", "Cumilla");
-        Address a2 = new Address(102, "Present Address", "Dhaka");
+        Address a1 = new Address(1, "Perm Address", "Cumilla");
+        Address a2 = new Address(2, "Present Address", "Dhaka");
 
         List<Address> addresses = new ArrayList<>();
         addresses.add(a1);
@@ -28,14 +28,31 @@ public class Main {
 
         Employee em = new Employee();
         em.setAddress(addresses);
-        em.setId(999);
+        em.setId(123);
         em.setName("Shamim");
+
+        a1.setEmployee(em);
+        a2.setEmployee(em);
 
         session.save(a1);
         session.save(a2);
-        session.save(em);
+        session.save(em); // --> Data Database a gese..
+
+        em.setName("Sarker"); // --> Eta deoa te Data Update hobe ekhon.
+        
+        //Address address = (Address) session.get(Address.class, 101);
+
+        //System.out.println(address.getId()+" "+address.getAddressType()+" "+address.getAddress()+" "+address.getEmployee().getId());
+
+        // Why not sout(address); ?
+
+        //System.out.println(address.toString());
         /////////////////////////////////////////////
         transaction.commit();
+
+        Employee employee = session.get(Employee.class, 123);
+        System.out.println(employee.getName());
+
         session.close();
         factory.close();
     }

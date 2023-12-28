@@ -11,6 +11,7 @@
         <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
         <property name="hbm2ddl.auto">create</property> <!--If table is not present then create it-->
         <property name="show_sql">true</property>  <!-- Shows the type of query -->
+        <property name="format_sql">true</property>
 <!--        <mapping class="com.entity.Question"/>-->
 <!--        <mapping class="com.entity.Answer"/>-->
         <mapping class="com.entity.Address"/>

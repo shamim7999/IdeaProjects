@@ -23,10 +23,10 @@
 <body>
 
 
-<c:forEach var="t" items="${testers}">
+<c:forEach var="t" items="${testers}"> <!-- No need to import the List<Tester> testers coming from DemoServlet.java.-->
     ID: ${t.getId()} <br>
     Name: ${t.getName()} <br>
-    Age: ${t.getAge()} <br> <br>
+    Age: ${t.getAge()} <br><br>
 </c:forEach>
 
 </body>
