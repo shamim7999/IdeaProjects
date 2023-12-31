@@ -3,6 +3,7 @@ package com.entities;
 import javax.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "notes")
@@ -11,12 +12,9 @@ public class Note {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
-
     @Column(length = 1500)
     private String content;
     private LocalDateTime addedDate;
-
-
 
     public Note() {
     }
