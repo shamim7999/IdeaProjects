@@ -32,7 +32,7 @@
 <%--        <sql:query var="resultSet" dataSource="${db}">Select *  from notes</sql:query>--%>
         <%!
             public String formatDate(LocalDateTime addedDate) {
-                DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+                DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("EEE, dd-MM-yyyy HH:mm:ss", Locale.ENGLISH);
 
                 String formattedDate = addedDate.format(myFormatObj);
                 return formattedDate;
