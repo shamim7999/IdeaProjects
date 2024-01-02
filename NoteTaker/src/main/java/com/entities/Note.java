@@ -1,11 +1,16 @@
 package com.entities;
 
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import javax.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import org.hibernate.annotations.Cache;
 
 @Entity
+@Cacheable
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @Table(name = "notes")
 public class Note {
     @Id

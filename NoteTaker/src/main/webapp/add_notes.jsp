@@ -12,6 +12,7 @@
     <%@ include file="all_js_css.jsp"%>
 </head>
 <body>
+<%@ include file="validate.jsp" %>
     <div class="container">
         <%@ include file="navbar.jsp"%>
         <h1>Please Enter your notes here.</h1> <br>

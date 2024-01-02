@@ -24,6 +24,7 @@
     <%@ include file="all_js_css.jsp"%>
 </head>
 <body>
+<%@ include file="validate.jsp" %>
     <div class="container">
         <%@ include file="navbar.jsp"%>
         <h1>Notes Here</h1>
