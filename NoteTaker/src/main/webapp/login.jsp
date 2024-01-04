@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Title</title>
+    <%@ include file="all_js_css.jsp"%>
     <style>
         input {
             margin: 10px;
@@ -17,11 +18,22 @@
 </head>
 <body>
 
-<form action="LoginServlet" method="post">
-    Enter User Name: <input type="text" name="user_name" placeholder="User Name" required/>
-    Enter Password: <input type="password" name="user_password" placeholder="User Password" required/>
-    <button type="submit">Login</button>
-    <a href="register.jsp"> <button>Register</button> </a>
-</form>
+<div class="container mt-5">
+    <h1 class="text-center">Login Now!</h1>
+    <form action="LoginServlet" method="post">
+        <div class="mb-3">
+            <label for="user_name" class="form-label">User Name</label>
+            <input type="text" class="form-control" id="user_name" name="user_name">
+        </div>
+        <div class="mb-3">
+            <label for="user_password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="user_password" name="user_password">
+        </div>
+        <div class="container text-center">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </form>
+</div>
+
 </body>
 </html>
