@@ -12,9 +12,9 @@
     <title>Title</title>
 </head>
 <body>
-    ${userName} <br>
-    ${userEmail} <br>
-    ${userPassword}
+    ${user.userName} <br>
+    ${user.userEmail} <br>
+    ${user.userPassword}
 
 </body>
 </html>
