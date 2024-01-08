@@ -1,8 +1,6 @@
 package com.spring.mvc.model;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class Pupil {
@@ -10,11 +8,27 @@ public class Pupil {
 
     private long id;
 
-    //@DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date date;
+    private String date;
     private List<String> subjects;
     private String gender;
     private String type;
+
+    public Pupil(String name, long id, String date, List<String> subjects, String gender, String type) {
+        this.name = name;
+        this.id = id;
+        this.date = date;
+        this.subjects = subjects;
+        this.gender = gender;
+        this.type = type;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public String getName() {
         return name;
@@ -32,13 +46,7 @@ public class Pupil {
         this.id = id;
     }
 
-    public Date getDate() {
-        return date;
-    }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
 
     public List<String> getSubjects() {
         return subjects;
@@ -62,18 +70,6 @@ public class Pupil {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public Pupil(String name, long id, Date date, List<String> subjects, String gender, String type) {
-        this.name = name;
-        this.id = id;
-        this.date = date;
-        this.subjects = subjects;
-        this.gender = gender;
-        this.type = type;
-    }
-
-    public Pupil() {
     }
 
     @Override

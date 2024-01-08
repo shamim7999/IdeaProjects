@@ -1,0 +1,8 @@
+        {
+           LocalDateTime date = LocalDateTime.now();
+           DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("EEE, dd-MM-yyyy HH:mm:ss", Locale.ENGLISH);
+           String dateString = date.format(dateTimeFormatter);
+           date = LocalDateTime.parse(dateString, dateTimeFormatter);
+           System.out.println(dateString);
+           System.out.println(date);
+        }
