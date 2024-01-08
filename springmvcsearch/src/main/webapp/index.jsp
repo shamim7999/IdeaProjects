@@ -12,8 +12,7 @@
 </head>
 <body>
     <%
-        response.sendRedirect("contact");
+        response.sendRedirect("home");
     %>
 </body>
 </html>
-/home/shamim/work-on-it/springmvcsearch

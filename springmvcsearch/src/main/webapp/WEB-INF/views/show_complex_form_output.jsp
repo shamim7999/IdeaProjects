@@ -2,18 +2,16 @@
   Created by IntelliJ IDEA.
   User: shamim
   Date: ৮/১/২৪
-  Time: ৯:২৩ AM
+  Time: ৫:২৭ PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Complex Form</title>
 </head>
 <body>
-    <%
-        response.sendRedirect("contact");
-    %>
+        ${pupil}
 </body>
 </html>
-/home/shamim/work-on-it/springmvcsearch
