@@ -10,10 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.FileInputStream;
 
@@ -53,5 +50,11 @@ public class ContactController {
         return "redirect:/dsii/home";
         //return "redirect:https://www.facebook.com";  eta dile --> direct facebook a chole jabe.. But,
         // return "redirect:/https://www.facebook.com"; eta dile --> localhost:8080/springmvc/https://www.facebook.com etay jabe.
+    }
+
+    @RequestMapping(path = "/user/{userId}")
+    public String loadUserById(@PathVariable("userId") int id, Model model) {
+        model.addAttribute("user", this.userService.getUserById(id));
+        return "success";
     }
 }

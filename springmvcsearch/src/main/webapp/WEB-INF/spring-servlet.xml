@@ -19,8 +19,8 @@
 
 
     <mvc:annotation-driven/>
-    <!--    <mvc:resources location="/WEB-INF/resources/"-->
-    <!--                   mapping="/resources/**"/>-->
+        <mvc:resources location="/WEB-INF/resources/"
+                       mapping="/resources/**"/>
 
     <!--    &lt;!&ndash;interceptor&ndash;&gt;-->
     <!--    <mvc:interceptors>-->
@@ -36,9 +36,9 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <!--commonMultipart resolver-->
-    <!--    <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver"-->
-    <!--          name="multipartResolver"/>-->
+<!--    commonMultipart resolver-->
+        <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+              name="multipartResolver"/>
 
     <!--hibernate, orm, database configuration-->
     <!--dataSource bean-->

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.text.ParseException;
@@ -38,7 +39,6 @@ public class FormController {
         model.addAttribute("pupil", pupil);
         return "show_complex_form_output";
     }
-
     /*
         We could also do this. But we did above for insert the date in a String
         Type variable defined in Pupil Class. The date there is as String type.
@@ -49,4 +49,27 @@ public class FormController {
         }
 
      */
+
+
+    @RequestMapping("/fileUpload")
+    public String fileUpload() {
+        return "file_upload";
+    }
+
+    @RequestMapping(path = "/fileUploader", method = RequestMethod.POST)
+    public String fileUploader(@RequestParam("img") CommonsMultipartFile file, HttpServletRequest req, Model model) {
+        System.out.println(file.getName());
+        System.out.println(file.getContentType());
+        System.out.println(file.getFileItem());
+        System.out.println(file.getOriginalFilename());
+        System.out.println(file.getSize());
+
+        byte [] bytes = file.getBytes();
+        String path = req.getServletContext().getRealPath("");
+        System.out.println(path);
+
+        model.addAttribute("imageFile", file.getOriginalFilename());
+
+        return "file_success";
+    }
 }

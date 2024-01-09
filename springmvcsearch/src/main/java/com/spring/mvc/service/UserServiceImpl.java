@@ -14,4 +14,7 @@ public class UserServiceImpl implements UserService{
         int i = this.userDao.saveUser(user);
         return i;
     }
+    public User getUserById(int id) {
+        return this.userDao.getUserById(id);
+    }
 }

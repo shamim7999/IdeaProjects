@@ -27,4 +27,8 @@ public class UserDao {
         affectedRow = (Integer) this.getHibernateTemplate().save(user);
         return affectedRow;
     }
+
+    public User getUserById(int id) {
+        return this.hibernateTemplate.get(User.class, id);
+    }
 }
