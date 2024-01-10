@@ -14,10 +14,4 @@ public class HomeController {
         model.addAttribute("name", "Shamim");
         return "home";
     }
-
-
-    @ExceptionHandler({NullPointerException.class, NumberFormatException.class})
-    public String exceptionHandler() {
-        return "null_page";
-    }
 }

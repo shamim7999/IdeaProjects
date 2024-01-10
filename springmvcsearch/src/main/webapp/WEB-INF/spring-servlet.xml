@@ -22,12 +22,12 @@
                    mapping="/resources/**"/>
 
     <!--interceptor-->
-    <!--    <mvc:interceptors>-->
-    <!--        <mvc:interceptor>-->
-    <!--            <mvc:mapping path="/interceptorSuccess"/>-->
-    <!--            <bean class="com.spring.mvc.controller.MyInterceptor" name="interceptor"/>-->
-    <!--        </mvc:interceptor>-->
-    <!--    </mvc:interceptors>-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/welcomePerson"/>
+            <bean class="com.spring.mvc.controller.MyInterceptors" />
+        </mvc:interceptor>
+    </mvc:interceptors>
 
     <!--viewResolver bean-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" name="viewResolver">

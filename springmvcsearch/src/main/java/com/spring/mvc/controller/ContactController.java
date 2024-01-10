@@ -58,9 +58,5 @@ public class ContactController {
         return "success";
     }
 
-    @ExceptionHandler({Exception.class})
-    public String exceptionHandler(Model model) {
-        model.addAttribute("msg", "Mara Khao");
-        return "null_page";
-    }
+
 }

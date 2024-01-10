@@ -89,10 +89,5 @@ public class FormController {
         System.out.println(s1.length());
         return "home";
     }
-    @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
-    @ExceptionHandler({Exception.class})
-    public String exceptionHandler(Model model) {
-        model.addAttribute("msg", "Mara Khao");
-        return "null_page";
-    }
+
 }
