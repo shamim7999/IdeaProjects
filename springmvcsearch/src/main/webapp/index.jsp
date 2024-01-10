@@ -12,7 +12,7 @@
 </head>
 <body>
     <%
-        response.sendRedirect("home");
+        response.sendRedirect("/springmvcsearch/home");
     %>
 </body>
 </html>

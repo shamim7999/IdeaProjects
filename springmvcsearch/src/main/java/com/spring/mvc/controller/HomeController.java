@@ -2,6 +2,7 @@ package com.spring.mvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -12,5 +13,11 @@ public class HomeController {
     public String home(Model model) {
         model.addAttribute("name", "Shamim");
         return "home";
+    }
+
+
+    @ExceptionHandler({NullPointerException.class, NumberFormatException.class})
+    public String exceptionHandler() {
+        return "null_page";
     }
 }

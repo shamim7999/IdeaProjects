@@ -1,15 +1,13 @@
 package com.spring.mvc.controller;
 
 import com.spring.mvc.model.Pupil;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
@@ -67,7 +65,7 @@ public class FormController {
         byte[] data = file.getBytes();
 
         // save this file in server
-        String path = request.getServletContext().getRealPath("/") + "WEB-INF/resources/images/"
+        String path = request.getServletContext().getRealPath("/") + "WEB-INF/resources/image/"
                 + file.getOriginalFilename();
         System.out.println(path);
         FileOutputStream fos;
@@ -84,5 +82,17 @@ public class FormController {
             model.addAttribute("msg", "uploaded Error!!");
         }
         return "file_success";
+    }
+    @RequestMapping("/errorTest")
+    public String errorTest() {
+        String s1 = null;
+        System.out.println(s1.length());
+        return "home";
+    }
+    @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
+    @ExceptionHandler({Exception.class})
+    public String exceptionHandler(Model model) {
+        model.addAttribute("msg", "Mara Khao");
+        return "null_page";
     }
 }

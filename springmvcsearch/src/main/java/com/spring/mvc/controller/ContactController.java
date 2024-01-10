@@ -57,4 +57,10 @@ public class ContactController {
         model.addAttribute("user", this.userService.getUserById(id));
         return "success";
     }
+
+    @ExceptionHandler({Exception.class})
+    public String exceptionHandler(Model model) {
+        model.addAttribute("msg", "Mara Khao");
+        return "null_page";
+    }
 }

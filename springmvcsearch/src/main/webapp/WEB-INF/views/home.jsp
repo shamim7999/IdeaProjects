@@ -9,8 +9,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="<c:url value="../resources/css/style.css" />" rel="stylesheet">
-    <script type="text/javascript" src="<c:url value="./../resources/js/script.js" />"></script>
+
+
+<%--    <link href="<c:url value="../resources/css/style.css" />" rel="stylesheet">--%>
+<%--    <script type="text/javascript" src="<c:url value="./../resources/js/script.js" />"></script>--%>
     <title>Hello, world!</title>
 </head>
 <body>
@@ -21,7 +23,7 @@
 <h1> Hi, <%= name %> This is home page</h1>
 ${name}
 
-<img alt="bunny hop image"  src="<c:url value="../resources/image/spider.png" />" />
+<%--<img alt="bunny hop image"  src="<c:url value="../resources/images/spider.png" />" />--%>
 
 
 <div class="container">
