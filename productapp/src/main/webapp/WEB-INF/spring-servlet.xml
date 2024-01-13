@@ -14,20 +14,9 @@
        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <context:component-scan base-package="com.spring.mvc"/>
-
     <tx:annotation-driven proxy-target-class="true"/>
-
-    <mvc:annotation-driven/>
     <mvc:resources location="/WEB-INF/resources/"
                    mapping="/resources/**"/>
-
-    <!--interceptor-->
-    <mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/welcomePerson"/>
-            <bean class="com.spring.mvc.controller.MyInterceptors" />
-        </mvc:interceptor>
-    </mvc:interceptors>
 
     <!--viewResolver bean-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" name="viewResolver">
@@ -39,42 +28,6 @@
     <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
           name="multipartResolver"/>
 
-    <!--hibernate, orm, database configuration-->
-    <!--dataSource bean-->
-    <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="dataSource">
-        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/orm"/>
-        <property name="username" value="root"/>
-        <property name="password" value=""/>
-    </bean>
-
-    <!--sessionFactory bean-->
-    <bean class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" name="sessionFactory">
-        <!--dataSource property-->
-        <property name="dataSource" ref="dataSource"/>
-        <!--hibernateProperties property-->
-        <property name="hibernateProperties">
-            <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
-                <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.hbm2ddl.auto">update</prop>
-            </props>
-        </property>
-        <!--annotatedClasses property-->
-        <property name="annotatedClasses">
-            <list>
-                <value>com.spring.mvc.model.Product</value>
-            </list>
-        </property>
-    </bean>
-
-    <!--hibernateTemplate bean-->
-    <bean class="org.springframework.orm.hibernate5.HibernateTemplate" name="hibernateTemplate">
-        <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
-
-    <!--hibernateTransactionManager bean-->
-    <bean class="org.springframework.orm.hibernate5.HibernateTransactionManager" name="transactionManager">
-        <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
+    <import resource="hibernate.orm.cfg.xml"/>
+    <import resource="interceptor.cfg.xml"/>
 </beans>
