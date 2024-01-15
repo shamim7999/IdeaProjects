@@ -11,7 +11,7 @@ public class Employee {
     @Id
     private int id;
     private String name;
-    @OneToMany(mappedBy = "employee", fetch = FetchType.EAGER) // This `employee` is the variable declared in Address.java class
+    @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY) // This `employee` is the variable declared in Address.java class
     // mappedBy dile `Employee_Address` namer Table create hoy na.
     private List<Address> address;
 
