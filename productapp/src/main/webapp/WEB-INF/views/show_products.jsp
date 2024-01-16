@@ -11,6 +11,7 @@
     <%@ include file="all_css_js.jsp"%>
 </head>
 <body>
+<%@ include file="validate.jsp" %>
     <div class="container mt-3">
         <div class="row">
             <div class="col-md-12">

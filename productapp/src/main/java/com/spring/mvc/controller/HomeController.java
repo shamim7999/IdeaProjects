@@ -1,21 +1,18 @@
 package com.spring.mvc.controller;
 
+import com.spring.mvc.helpers.ModelTransporter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class HomeController {
 
     @RequestMapping("/home")
     public String home(Model model) {
-        model.addAttribute("name", "Shamim");
+        model.addAttribute("name", ModelTransporter.getModel().getAttribute("name"));
         return "home";
     }
-
     @RequestMapping("/welcome")
     public String welcome() {
         return "welcome";

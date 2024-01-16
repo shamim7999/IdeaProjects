@@ -12,6 +12,7 @@
     <title>Title</title>
 </head>
     <body>
+    <%@ include file="validate.jsp" %>
         Welcome home, ${personName}
     </body>
 </html>

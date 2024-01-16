@@ -11,6 +11,7 @@
     <title>Title</title>
 </head>
     <body>
+    <%@ include file="validate.jsp" %>
     <form action="welcomePerson" method="post">
         <input type="text" name="person_name"> &nbsp; &nbsp; <input type="submit" value="Submit">
     </form>

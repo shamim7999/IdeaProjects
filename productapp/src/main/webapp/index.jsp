@@ -12,7 +12,7 @@
 </head>
 <body>
     <%
-        response.sendRedirect("/dsi/home");
+        response.sendRedirect("/dsi/login");
     %>
 </body>
 </html>

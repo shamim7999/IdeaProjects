@@ -16,6 +16,7 @@
     <title>Hello, world!</title>
 </head>
 <body>
+<%@ include file="validate.jsp" %>
 <%
     String name = request.getAttribute("name").toString();
 %>

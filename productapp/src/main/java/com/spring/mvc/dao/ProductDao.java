@@ -1,7 +1,9 @@
 package com.spring.mvc.dao;
 
 import com.spring.mvc.model.Product;
+import com.spring.mvc.model.Registered;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,6 +14,9 @@ import java.util.List;
 public class ProductDao {
     @Autowired
     private HibernateTemplate hibernateTemplate;
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     @Transactional
     public void createProduct(Product product) {
@@ -27,4 +32,10 @@ public class ProductDao {
     public Product getProduct(int productId) {
         return this.hibernateTemplate.get(Product.class, productId);
     }
- }
+
+    @Transactional
+    public void registerUser(Registered registered){
+        this.hibernateTemplate.saveOrUpdate(registered);
+    }
+
+}

@@ -11,6 +11,7 @@
     <%@ include file="./all_css_js.jsp"%>
 </head>
     <body>
+    <%@ include file="validate.jsp" %>
         <h1>This is Product CRUD App</h1>
     <div class="container mt-3">
         <div class="row">
@@ -31,7 +32,7 @@
                         <input type="text" class="form-control" name="price" id="price" placeholder="Enter the product price here">
                     </div>
                     <div class="container text-center mt-5">
-                        <a href="${pageContext.request.contextPath}/" class="btn btn-outline-danger">back</a>
+                        <a href="${pageContext.request.contextPath}/home" class="btn btn-outline-danger">back</a>
                         <button type="submit" class="btn btn-primary">Add</button>
                         <a href="${pageContext.request.contextPath}/all-products" class="btn btn-outline-success">Show All</a>
                     </div>

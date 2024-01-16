@@ -11,6 +11,7 @@
     <%@ include file="./all_css_js.jsp"%>
 </head>
 <body>
+<%@ include file="validate.jsp" %>
 <h1>This is Product CRUD App</h1>
 <div class="container mt-3">
     <div class="row">

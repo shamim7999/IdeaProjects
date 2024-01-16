@@ -2,6 +2,7 @@ package com.spring.mvc.service;
 
 import com.spring.mvc.dao.ProductDao;
 import com.spring.mvc.model.Product;
+import com.spring.mvc.model.Registered;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,5 +31,10 @@ public class ProductServiceImpl implements ProductService{
     @Override
     public Product getProduct(int productId) {
         return this.productDao.getProduct(productId);
+    }
+
+    @Override
+    public void registerUser(Registered registered) {
+        this.productDao.registerUser(registered);
     }
 }
