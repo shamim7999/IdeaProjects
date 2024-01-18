@@ -21,7 +21,7 @@
         <p class="lead">
             The page you’re looking for doesn’t exist.
         </p>
-        <a href="http://localhost:8080/dsi/home" class="btn btn-primary">Go Home</a>
+        <a href="${pageContext.request.contextPath}/home" class="btn btn-primary">Go Home</a>
     </div>
 </div>
 </body>

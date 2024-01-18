@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <%@ include file="./all_css_js.jsp"%>
+    <%@ include file="all_css_js.jsp"%>
 </head>
     <body>
     <%@ include file="validate.jsp" %>

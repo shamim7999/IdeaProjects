@@ -28,6 +28,11 @@
                     <button type="submit" class="btn btn-outline-light">Search</button>
                 </div>
             </form>
+            <form action="logoutHandler" method="post">
+                <div class="container text-center">
+                    <button type="submit" class="btn btn-outline-danger">Logout</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
