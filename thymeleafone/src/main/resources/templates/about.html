@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http//www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>This is Home Page</h1>
+    <h2 th:text="${#strings.toUpperCase(name)}"></h2>
+    <h3 th:text="${currentDate}"></h3>
+    <div th:with="a=5, b=6">
+        <h1>Sum is: <span th:text="${a+b}"></span></h1>
+        <h1 th:text=" 'Value of b is: '+${b} "></h1>
+    </div>
+</body>
+</html>
