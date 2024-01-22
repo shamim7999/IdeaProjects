@@ -4,6 +4,7 @@ import com.spring.boot.thymeleafone.model.LoginData;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,16 +33,11 @@ public class MyController {
 
     //@RequestMapping(path = "/processForm", method = RequestMethod.POST)
     @PostMapping("/processForm")
-    public String processForm(@Valid @ModelAttribute LoginData loginData, BindingResult result, Model model) {
-        model.addAttribute("user", loginData);
+    public String processForm(@Valid @ModelAttribute("user") LoginData user, BindingResult result) {
         if(result.hasErrors()) {
             System.out.println(result);
-            //System.out.println(model.getAttribute("LoginData").toString());
-            //return "redirect:/form";
             return "form";
         }
-        //model.addAttribute("LoginData", loginData);
-
         return "success";
     }
 }
